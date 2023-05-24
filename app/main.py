@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
 
-data_path = '../data/data.csv'
+data_path = 'data/data.csv'
 
 
 def get_clean_data(bc_data):
