@@ -116,9 +116,9 @@ def main():
     )
 
     with open("style.css") as f:
-        test = st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
+        st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
 
-    st.markdown(test)
+
 
     with st.sidebar:
         st.subheader("Cell Nuclei Measurements")
