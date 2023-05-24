@@ -4,8 +4,8 @@ import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
 
-
 data_path = '../data/data.csv'
+
 
 def get_clean_data(bc_data):
     """
@@ -13,10 +13,9 @@ def get_clean_data(bc_data):
     """
     df = pd.read_csv(bc_data)
 
-    df = df.drop(columns=['diagnosis','Unnamed: 32', 'id'], axis=1)
+    df = df.drop(columns=['diagnosis', 'Unnamed: 32', 'id'], axis=1)
 
     return df
-
 
 
 def get_scaled_values(df, input_data):
@@ -45,7 +44,7 @@ def get_radar_chart(input_data):
     fig = go.Figure()
 
     fig.add_trace(go.Scatterpolar(
-        r = [v for i, v in input_data.items()][:9],
+        r=[v for i, v in input_data.items()][:9],
         theta=categories,
         fill='toself',
         name="Mean Value"
@@ -116,10 +115,10 @@ def main():
         initial_sidebar_state="expanded"
     )
 
-    with open("../assets/style.css") as f:
-        st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
+    with open("style.css") as f:
+        test = st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
 
-
+    st.markdown(test)
 
     with st.sidebar:
         st.subheader("Cell Nuclei Measurements")
